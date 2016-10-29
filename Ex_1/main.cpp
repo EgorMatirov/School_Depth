@@ -1,8 +1,8 @@
-#include <algorithm>
+п»ї#include <algorithm>
 #include <stdio.h>
 using namespace std;
 
-// Иначе студия ругается на scanf \ printf
+// РРЅР°С‡Рµ СЃС‚СѓРґРёСЏ СЂСѓРіР°РµС‚СЃСЏ РЅР° scanf \ printf
 #pragma warning(disable:4996)
 
 void solve_a()
