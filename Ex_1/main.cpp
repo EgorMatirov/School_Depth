@@ -49,7 +49,7 @@ void solve_b()
             }
             printf("%d", num);
             ++num;
-;        }
+        }
         printf("\n");
     }
 }
