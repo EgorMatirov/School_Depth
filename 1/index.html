@@ -212,27 +212,27 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
   
     <article>
       <h2><a href="https://egormatirov.github.io/School_Depth/1/A/">A</a></h2>
-      <p>#include #include &lt;stdio.h&gt; using namespace std; // Иначе студия ругается на scanf \ printf #pragma warning(disable:4996) int main() { int n; scanf(&quot;%d&quot;, &amp;n); int max_number = 1 &lt;&lt; n; int max_position = 1 &lt;&lt; (n - 1); for (int i = 0; i&lt;max_number; ++i) { for (int maska = max_position; maska&gt;0; maska &gt;&gt;= 1) { if ((i&amp;maska) == 0) { printf(&quot;+&quot;); } else { printf(&quot;-&quot;); } } printf(&quot;\n&quot;); } return 0; } </p>
+      <p>#include &lt;algorithm&gt; #include &lt;stdio.h&gt; using namespace std; // Иначе студия ругается на scanf \ printf #pragma warning(disable:4996) int main() { int n; scanf(&quot;%d&quot;, &amp;n); int max_number = 1 &lt;&lt; n; int max_position = 1 &lt;&lt; (n - 1); for (int i = 0; i&lt;max_number; ++i) { for (int maska = max_position; maska&gt;0; maska &gt;&gt;= 1) { if ((i&amp;maska) == 0) { printf(&quot;+&quot;); } else { printf(&quot;-&quot;); } } printf(&quot;\n&quot;); } return 0; } </p>
     </article>
   
     <article>
       <h2><a href="https://egormatirov.github.io/School_Depth/1/B/">B</a></h2>
-      <p>#include #include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int n;scanf(&quot;%d&quot;, &amp;n);int max_number = 1 &lt;&lt; n;int max_position = 1 &lt;&lt; (n - 1);for (int i = 0; i&lt;max_number; ++i){int num = 1;for (int maska = max_position; maska&gt;0; maska &gt;&gt;= 1){if ((i&amp;maska) == 0){printf(&quot;+&quot;);}else{printf(&quot;-&quot;);}printf(&quot;%d&quot;, num);++num;}printf(&quot;\n&quot;);}return 0;} </p>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int n;scanf(&quot;%d&quot;, &amp;n);int max_number = 1 &lt;&lt; n;int max_position = 1 &lt;&lt; (n - 1);for (int i = 0; i&lt;max_number; ++i){int num = 1;for (int maska = max_position; maska&gt;0; maska &gt;&gt;= 1){if ((i&amp;maska) == 0){printf(&quot;+&quot;);}else{printf(&quot;-&quot;);}printf(&quot;%d&quot;, num);++num;}printf(&quot;\n&quot;);}return 0;} </p>
     </article>
   
     <article>
       <h2><a href="https://egormatirov.github.io/School_Depth/1/C/">C</a></h2>
-      <p>#include #include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int m;scanf(&quot;%d&quot;, &amp;m);int n = 9;int max_number = 1 &lt;&lt; n;int max_position = 1 &lt;&lt; (n - 1);for (int i = 0; i&lt;max_number; ++i){int balance = -m;for (int maska = max_position, num = 1; maska&gt;0; maska &gt;&gt;= 1, ++num){if ((i&amp;maska) == 0){balance += num;}else{balance -= num;}}if(balance == 0){for (int maska = max_position, num = 1; maska&gt;0; maska &gt;&gt;= 1, ++num){if ((i&amp;maska) == 0){printf(&quot;+&quot;);}else{printf(&quot;-&quot;);}printf(&quot;%d&quot;, num);}printf(&quot;\n&quot;);}}return 0;} </p>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int m;scanf(&quot;%d&quot;, &amp;m);int n = 9;int max_number = 1 &lt;&lt; n;int max_position = 1 &lt;&lt; (n - 1);for (int i = 0; i&lt;max_number; ++i){int balance = -m;for (int maska = max_position, num = 1; maska&gt;0; maska &gt;&gt;= 1, ++num){if ((i&amp;maska) == 0){balance += num;}else{balance -= num;}}if(balance == 0){for (int maska = max_position, num = 1; maska&gt;0; maska &gt;&gt;= 1, ++num){if ((i&amp;maska) == 0){printf(&quot;+&quot;);}else{printf(&quot;-&quot;);}printf(&quot;%d&quot;, num);}printf(&quot;\n&quot;);}}return 0;} </p>
     </article>
   
     <article>
       <h2><a href="https://egormatirov.github.io/School_Depth/1/D/">D</a></h2>
-      <p>#include #include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int n, prev;scanf(&quot;%d&quot;, &amp;n);scanf(&quot;%d&quot;, &amp;prev);for (int i = 1; i&lt;n; ++i){int diff = 0;int current;scanf(&quot;%d&quot;, &amp;current);int maska = 1;while(maska &lt; max(prev, current)){maska&lt;&lt;=1;}for(; maska &gt; 0; maska &gt;&gt;=1){if((prev&amp;maska) != (current&amp;maska)){++diff;}}if (diff != 1){printf(&quot;NO\n%d\n&quot;, i);return;}prev = current;}printf(&quot;YES\n&quot;);return 0;} </p>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int n, prev;scanf(&quot;%d&quot;, &amp;n);scanf(&quot;%d&quot;, &amp;prev);for (int i = 1; i&lt;n; ++i){int diff = 0;int current;scanf(&quot;%d&quot;, &amp;current);int maska = 1;while(maska &lt; max(prev, current)){maska&lt;&lt;=1;}for(; maska &gt; 0; maska &gt;&gt;=1){if((prev&amp;maska) != (current&amp;maska)){++diff;}}if (diff !</p>
     </article>
   
     <article>
       <h2><a href="https://egormatirov.github.io/School_Depth/1/E/">E</a></h2>
-      <p>#include #include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int w, n;int W_i[10];scanf(&quot;%d&quot;, &amp;n);scanf(&quot;%d&quot;, &amp;w);for (int i = 0; i &lt; n; ++i)scanf(&quot;%d&quot;, &amp;W_i[i]);int max_number = 1 &lt;&lt; n;for (int k = 0; k&lt;max_number; ++k){for (int i = 0; i&lt;max_number; ++i){int balance = w;for (int j = n; j &gt; 0; --j){int p = 1 &lt;&lt; (j-1);if ((k&amp;p) !</p>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int w, n;int W_i[10];scanf(&quot;%d&quot;, &amp;n);scanf(&quot;%d&quot;, &amp;w);for (int i = 0; i &lt; n; ++i)scanf(&quot;%d&quot;, &amp;W_i[i]);int max_number = 1 &lt;&lt; n;for (int k = 0; k&lt;max_number; ++k){for (int i = 0; i&lt;max_number; ++i){int balance = w;for (int j = n; j &gt; 0; --j){int p = 1 &lt;&lt; (j-1);if ((k&amp;p) !</p>
     </article>
   
 </main>

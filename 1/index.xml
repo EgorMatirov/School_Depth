@@ -15,7 +15,7 @@
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/1/A/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include 
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
@@ -54,7 +54,7 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/1/B/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include 
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
@@ -96,7 +96,7 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/1/C/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include 
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
@@ -152,7 +152,7 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/1/D/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include 
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
@@ -200,7 +200,7 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/1/E/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include 
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
