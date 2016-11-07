@@ -208,7 +208,7 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
     <main>
   <h1>A</h1>
   <pre><code>#include 
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 using namespace std;
 
 // Иначе студия ругается на scanf \ printf
@@ -217,23 +217,23 @@ using namespace std;
 int main()
 {
     int n;
-    scanf("%d", &n);
-    int max_number = 1 << n;
-    int max_position = 1 << (n - 1);
-    for (int i = 0; i<max_number; ++i)
+    scanf(&quot;%d&quot;, &amp;n);
+    int max_number = 1 &lt;&lt; n;
+    int max_position = 1 &lt;&lt; (n - 1);
+    for (int i = 0; i&lt;max_number; ++i)
     {
-        for (int maska = max_position; maska>0; maska >>= 1)
+        for (int maska = max_position; maska&gt;0; maska &gt;&gt;= 1)
         {
-            if ((i&maska) == 0)
+            if ((i&amp;maska) == 0)
             {
-                printf("+");
+                printf(&quot;+&quot;);
             }
             else
             {
-                printf("-");
+                printf(&quot;-&quot;);
             }
         }
-        printf("\n");
+        printf(&quot;\n&quot;);
     }
     return 0;
 }</code></pre>

@@ -208,7 +208,7 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
     <main>
   <h1>E</h1>
   <pre><code>#include 
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 using namespace std;
 
 // Иначе студия ругается на scanf \ printf
@@ -218,46 +218,46 @@ int main()
 {
     int w, n;
     int W_i[10];
-    scanf("%d", &n);
-    scanf("%d", &w);
-    for (int i = 0; i < n; ++i)
-        scanf("%d", &W_i[i]);
-    int max_number = 1 << n;
-    for (int k = 0; k<max_number; ++k)
+    scanf(&quot;%d&quot;, &amp;n);
+    scanf(&quot;%d&quot;, &amp;w);
+    for (int i = 0; i &lt; n; ++i)
+        scanf(&quot;%d&quot;, &amp;W_i[i]);
+    int max_number = 1 &lt;&lt; n;
+    for (int k = 0; k&lt;max_number; ++k)
     {
-        for (int i = 0; i<max_number; ++i)
+        for (int i = 0; i&lt;max_number; ++i)
         {
             int balance = w;
-            for (int j = n; j > 0; --j)
+            for (int j = n; j &gt; 0; --j)
             {
-                int p = 1 << (j-1);
-                if ((k&p) != 0 && (i&p) != 0)
+                int p = 1 &lt;&lt; (j-1);
+                if ((k&amp;p) != 0 &amp;&amp; (i&amp;p) != 0)
                     balance -= W_i[n - j];
-                if ((k&p) != 0 && (i&p) == 0)
+                if ((k&amp;p) != 0 &amp;&amp; (i&amp;p) == 0)
                     balance += W_i[n - j];
             }
             if (balance == 0)
             {
-                printf("YES\n");
-                for (int j = n; j > 0; --j)
+                printf(&quot;YES\n&quot;);
+                for (int j = n; j &gt; 0; --j)
                 {
-                    int p = 1 << (j - 1);
-                    if ((k&p) != 0 && (i&p) == 0)
-                        printf("%d ", W_i[n - j]);
+                    int p = 1 &lt;&lt; (j - 1);
+                    if ((k&amp;p) != 0 &amp;&amp; (i&amp;p) == 0)
+                        printf(&quot;%d &quot;, W_i[n - j]);
                 }
-                printf("\n");
-                for (int j = n; j > 0; --j)
+                printf(&quot;\n&quot;);
+                for (int j = n; j &gt; 0; --j)
                 {
-                    int p = 1 << (j - 1);
-                    if ((k&p) != 0 && (i&p) != 0)
-                        printf("%d ", W_i[n - j]);
+                    int p = 1 &lt;&lt; (j - 1);
+                    if ((k&amp;p) != 0 &amp;&amp; (i&amp;p) != 0)
+                        printf(&quot;%d &quot;, W_i[n - j]);
                 }
-                printf("\n");
+                printf(&quot;\n&quot;);
                 return;
             }
         }
     }
-    printf("NO\n");
+    printf(&quot;NO\n&quot;);
     return 0;
 }</code></pre>
 

@@ -208,7 +208,7 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
     <main>
   <h1>D</h1>
   <pre><code>#include 
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 using namespace std;
 
 // Иначе студия ругается на scanf \ printf
@@ -217,33 +217,33 @@ using namespace std;
 int main()
 {
     int n, prev;
-    scanf("%d", &n);
-    scanf("%d", &prev);
-    for (int i = 1; i<n; ++i)
+    scanf(&quot;%d&quot;, &amp;n);
+    scanf(&quot;%d&quot;, &amp;prev);
+    for (int i = 1; i&lt;n; ++i)
     {
         int diff = 0;
         int current;
-        scanf("%d", &current);
+        scanf(&quot;%d&quot;, &amp;current);
         int maska = 1;
-        while(maska < max(prev, current))
+        while(maska &lt; max(prev, current))
         {
-            maska<<=1;
+            maska&lt;&lt;=1;
         }
-        for(; maska > 0; maska >>=1)
+        for(; maska &gt; 0; maska &gt;&gt;=1)
         {
-            if((prev&maska) != (current&maska))
+            if((prev&amp;maska) != (current&amp;maska))
             {
                 ++diff;
             }
         }
         if (diff != 1)
         {
-            printf("NO\n%d\n", i);
+            printf(&quot;NO\n%d\n&quot;, i);
             return;
         }
         prev = current;
     }
-    printf("YES\n");
+    printf(&quot;YES\n&quot;);
     return 0;
 }</code></pre>
 
