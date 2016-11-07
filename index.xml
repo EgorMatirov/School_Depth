@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Решения задач с курса School Depth 2016/2017г.</title>
-    <link>http://replace-this-with-your-hugo-site.com/index.xml</link>
+    <link>https://egormatirov.github.io/School_Depth/index.xml</link>
     <description>Recent content on Решения задач с курса School Depth 2016/2017г.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egormatirov.github.io/School_Depth/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A</title>
-      <link>http://replace-this-with-your-hugo-site.com/1/A/</link>
+      <link>https://egormatirov.github.io/School_Depth/1/A/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/1/A/</guid>
+      <guid>https://egormatirov.github.io/School_Depth/1/A/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#include 
 #include &lt;stdio.h&gt;
 using namespace std;
@@ -50,19 +50,19 @@ int main()
     
     <item>
       <title></title>
-      <link>http://replace-this-with-your-hugo-site.com/contest/1/</link>
+      <link>https://egormatirov.github.io/School_Depth/contest/1/</link>
       <pubDate>Mon, 07 Nov 2016 19:34:00 +0400</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/contest/1/</guid>
+      <guid>https://egormatirov.github.io/School_Depth/contest/1/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://replace-this-with-your-hugo-site.com/contest/2/</link>
+      <link>https://egormatirov.github.io/School_Depth/contest/2/</link>
       <pubDate>Mon, 07 Nov 2016 19:34:00 +0400</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/contest/2/</guid>
+      <guid>https://egormatirov.github.io/School_Depth/contest/2/</guid>
       <description></description>
     </item>
     

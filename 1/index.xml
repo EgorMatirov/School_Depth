@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1-rsses on Решения задач с курса School Depth 2016/2017г.</title>
-    <link>http://replace-this-with-your-hugo-site.com/1/index.xml</link>
+    <link>https://egormatirov.github.io/School_Depth/1/index.xml</link>
     <description>Recent content in 1-rsses on Решения задач с курса School Depth 2016/2017г.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egormatirov.github.io/School_Depth/1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A</title>
-      <link>http://replace-this-with-your-hugo-site.com/1/A/</link>
+      <link>https://egormatirov.github.io/School_Depth/1/A/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/1/A/</guid>
+      <guid>https://egormatirov.github.io/School_Depth/1/A/</guid>
       <description>&lt;pre&gt;&lt;code&gt;#include 
 #include &lt;stdio.h&gt;
 using namespace std;
