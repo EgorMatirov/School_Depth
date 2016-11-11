@@ -434,7 +434,7 @@ int main()
     </item>
     
     <item>
-      <title>F (побитовые операции)</title>
+      <title>F (побитовые операции, двоичная система)</title>
       <link>https://egormatirov.github.io/School_Depth/2/F1/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
@@ -518,7 +518,8 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:34:00 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/contest/2/</guid>
-      <description></description>
+      <description>&lt;p&gt;Решение последней задачи с троичной системой счисления будет выложено чуть позже.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
