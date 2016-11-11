@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <title>
-  Контест №1 &ndash; Решения задач с курса School Depth 2016/2017г.
-</title>
+    <title>Решения задач с курса School Depth 2016/2017г.</title>
     
     
-    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/contest/1/">
+      <link href="https://egormatirov.github.io/School_Depth/2/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
+    
+    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/2/">
     
     
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAG+ZJREFU
@@ -208,80 +208,47 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
 
 </header>
     <main>
-  <h1>Контест №1</h1>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/A/">A</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/B/">B</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/C/">C</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/D/">D</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/E/">E</a></h2>
-      
-  <a href="http://new.bacs.cs.istu.ru/Contest/ContestMain?contestId=140 ">Ссылка на контест.</a>
+  <h1>2s</h1>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/A/">A</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int s(int n){int t = 1;if (n == 1) printf(&quot;1&quot;);else{printf(&quot;%d&quot;, n);printf(&quot; + &quot;);t = n + s(n - 1);}return t;}int main(){int n;scanf(&quot;%d&quot;, &amp;n);printf(&quot; = %d\n&quot;, s(n));return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/B/">B</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int s(int n){int t = 1;if (n == 1) printf(&quot;1&quot;);else{t = n + s(n - 1);printf(&quot; + &quot;);printf(&quot;%d&quot;, n);}return t;}int main(){int n;scanf(&quot;%d&quot;, &amp;n);printf(&quot; = %d\n&quot;, s(n));return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/C/">C</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int s(int current, int n, int sum){int t = 1;if (n == current) printf(&quot;%d = %d&quot;, sum + current, current);else{t = n + s(current + 1, n, sum + current);printf(&quot; + &quot;);printf(&quot;%d&quot;, current);}return t;}int main(){int n;scanf(&quot;%d&quot;, &amp;n);s(1, n, 0);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/D/">D</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int s(int n, int sum){int t = 1;if (n == 1) printf(&quot;%d = 1&quot;, sum + n);else{t = n + s(n - 1, sum + n);printf(&quot; + &quot;);printf(&quot;%d&quot;, n);}return t;}int main(){int n;scanf(&quot;%d&quot;, &amp;n);s(n, 0);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/E/">E</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)void R(){int a;scanf(&quot;%d&quot;, &amp;a);if (a &lt; 0)printf(&quot;%d &quot;, a);if (a != 0)R();if (a &gt; 0)printf(&quot;%d &quot;, a);}int main(){R();return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/2/F1/">F (побитовые операции)</a></h2>
+      <p>#include &lt;algorithm&gt;#include &lt;stdio.h&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int main(){int w, n;int W_i[15];scanf(&quot;%d&quot;, &amp;n);scanf(&quot;%d&quot;, &amp;w);for (int i = 0; i &lt; n; ++i)scanf(&quot;%d&quot;, &amp;W_i[i]);int max_weight = 0;for (auto i = 0; i &lt; n; ++i)max_weight += W_i[i];if (max_weight &lt; w){printf(&quot;NO&quot;);return 0;}int max_number = 1 &lt;&lt; n;for (int k = 0; k&lt;max_number; ++k){for (int i = 0; i&lt;max_number; ++i){int balance = w;for (int j = n; j &gt; 0; --j){int p = 1 &lt;&lt; (j - 1);if ((k&amp;p) !</p>
+    </article>
   
 </main>
     <footer>
-  <hr>
-  
-
-
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-
+  <nav>
+  <p>
+    
+    <span>Page 1 of 1</span>
+    
+  </p>
+</nav>
 
   
   <p class="powered-by">

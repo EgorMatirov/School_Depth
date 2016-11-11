@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2-rsses on Решения задач с курса School Depth 2016/2017г.</title>
+    <link>https://egormatirov.github.io/School_Depth/2/index.xml</link>
+    <description>Recent content in 2-rsses on Решения задач с курса School Depth 2016/2017г.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
+    <atom:link href="https://egormatirov.github.io/School_Depth/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A</title>
+      <link>https://egormatirov.github.io/School_Depth/2/A/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/A/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int s(int n)
+{
+    int t = 1;
+    if (n == 1) printf(&amp;quot;1&amp;quot;);
+    else
+    {
+        printf(&amp;quot;%d&amp;quot;, n);
+        printf(&amp;quot; + &amp;quot;);
+        t = n + s(n - 1);
+    }
+    return t;
+}
+
+int main()
+{
+    int n;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    printf(&amp;quot; = %d\n&amp;quot;, s(n));
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/2/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int s(int n)
+{
+    int t = 1;
+    if (n == 1) printf(&amp;quot;1&amp;quot;);
+    else
+    {
+        t = n + s(n - 1);
+        printf(&amp;quot; + &amp;quot;);
+        printf(&amp;quot;%d&amp;quot;, n);
+    }
+    return t;
+}
+
+int main()
+{
+    int n;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    printf(&amp;quot; = %d\n&amp;quot;, s(n));
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/2/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int s(int current, int n, int sum)
+{
+    int t = 1;
+    if (n == current) printf(&amp;quot;%d = %d&amp;quot;, sum + current, current);
+    else
+    {
+        t = n + s(current + 1, n, sum + current);
+        printf(&amp;quot; + &amp;quot;);
+        printf(&amp;quot;%d&amp;quot;, current);
+    }
+    return t;
+}
+
+int main()
+{
+    int n;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    s(1, n, 0);
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D</title>
+      <link>https://egormatirov.github.io/School_Depth/2/D/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/D/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int s(int n, int sum)
+{
+    int t = 1;
+    if (n == 1) printf(&amp;quot;%d = 1&amp;quot;, sum + n);
+    else
+    {
+        t = n + s(n - 1, sum + n);
+        printf(&amp;quot; + &amp;quot;);
+        printf(&amp;quot;%d&amp;quot;, n);
+    }
+    return t;
+}
+
+int main()
+{
+    int n;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    s(n, 0);
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>E</title>
+      <link>https://egormatirov.github.io/School_Depth/2/E/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/E/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+void R()
+{
+    int a;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;a);
+    if (a &amp;lt; 0)
+        printf(&amp;quot;%d &amp;quot;, a);
+    if (a != 0)
+        R();
+    if (a &amp;gt; 0)
+        printf(&amp;quot;%d &amp;quot;, a);
+}
+
+int main()
+{
+    R();
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>F (побитовые операции)</title>
+      <link>https://egormatirov.github.io/School_Depth/2/F1/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/F1/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int main()
+{
+    int w, n;
+    int W_i[15];
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;w);
+    for (int i = 0; i &amp;lt; n; ++i)
+        scanf(&amp;quot;%d&amp;quot;, &amp;amp;W_i[i]);
+    int max_weight = 0;
+    for (auto i = 0; i &amp;lt; n; ++i)
+        max_weight += W_i[i];
+    if (max_weight &amp;lt; w)
+    {
+        printf(&amp;quot;NO&amp;quot;);
+        return 0;
+    }
+    int max_number = 1 &amp;lt;&amp;lt; n;
+    for (int k = 0; k&amp;lt;max_number; ++k)
+    {
+        for (int i = 0; i&amp;lt;max_number; ++i)
+        {
+            int balance = w;
+            for (int j = n; j &amp;gt; 0; --j)
+            {
+                int p = 1 &amp;lt;&amp;lt; (j - 1);
+                if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) != 0)
+                    balance -= W_i[n - j];
+                if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) == 0)
+                    balance += W_i[n - j];
+            }
+            if (balance == 0)
+            {
+                printf(&amp;quot;YES\n&amp;quot;);
+                for (int j = n; j &amp;gt; 0; --j)
+                {
+                    int p = 1 &amp;lt;&amp;lt; (j - 1);
+                    if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) == 0)
+                        printf(&amp;quot;%d &amp;quot;, W_i[n - j]);
+                }
+                printf(&amp;quot;\n&amp;quot;);
+                for (int j = n; j &amp;gt; 0; --j)
+                {
+                    int p = 1 &amp;lt;&amp;lt; (j - 1);
+                    if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) != 0)
+                        printf(&amp;quot;%d &amp;quot;, W_i[n - j]);
+                }
+                printf(&amp;quot;\n&amp;quot;);
+                return 0;
+            }
+        }
+    }
+    printf(&amp;quot;NO\n&amp;quot;);
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
