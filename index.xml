@@ -439,7 +439,8 @@ int main()
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
       
       <guid>https://egormatirov.github.io/School_Depth/2/F1/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
+      <description>&lt;p&gt;Примерная оценка времени работы: O(4^n)
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 using namespace std;
 
@@ -499,7 +500,94 @@ int main()
     }
     printf(&amp;quot;NO\n&amp;quot;);
     return 0;
-}&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>F (побитовые операции, троичная система)</title>
+      <link>https://egormatirov.github.io/School_Depth/2/F2/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/2/F2/</guid>
+      <description>&lt;p&gt;Примерная оценка времени работы: O(n * 3^n)
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;cmath&amp;gt;
+using namespace std;
+
+// Иначе студия ругается на scanf \ printf
+#pragma warning(disable:4996)
+
+int trits[15];
+int W_i[15];
+
+// Обновляет значения цифр в троичной записи числа n.
+// Возвращает позицию первой значащей цифры.
+int update_trits(int n)
+{
+    int pos = 0;
+    while(n &amp;gt; 0)
+    {
+        trits[pos] = n % 3;
+        n /= 3;
+        ++pos;
+    }
+    return pos - 1;
+}
+
+// Выводит элементы на чаше. Если side == 2, то на левой, если side == 3, то на правой.
+void print_side(int max_pos, int side)
+{
+    for (int j = max_pos; j &amp;gt;= 0; --j)
+    {
+        if (trits[j] == side)
+            printf(&amp;quot;%d &amp;quot;, W_i[j]);
+    }
+    printf(&amp;quot;\n&amp;quot;);
+}
+
+int main()
+{
+    int w, n;
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;w);
+    for (int i = 0; i &amp;lt; n; ++i)
+        scanf(&amp;quot;%d&amp;quot;, &amp;amp;W_i[i]);
+
+    // *** Иначе TimeLimit на 42 тесте.
+    int max_weight = 0;
+    for (auto i = 0; i &amp;lt; n; ++i)
+        max_weight += W_i[i];
+    if (max_weight &amp;lt; w)
+    {
+        printf(&amp;quot;NO&amp;quot;);
+        return 0;
+    }
+    // ***
+
+    int max_number = pow(3, n);
+    for (int i = 0; i&amp;lt;max_number; ++i)
+    {
+        int balance = w;
+        int max_pos = update_trits(i);
+        for (int j = max_pos; j &amp;gt;= 0; --j)
+        {
+            if (trits[j] == 1)
+                balance -= W_i[j];
+            if (trits[j] == 2)
+                balance += W_i[j];
+        }
+        if (balance == 0)
+        {
+            printf(&amp;quot;YES\n&amp;quot;);
+            print_side(max_pos, 2);
+            print_side(max_pos, 1);
+            return 0;
+        }
+    }
+    printf(&amp;quot;NO\n&amp;quot;);
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 </description>
     </item>
     
