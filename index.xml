@@ -535,7 +535,9 @@ int update_trits(int n)
     return pos - 1;
 }
 
-// Выводит элементы на чаше. Если side == 2, то на левой, если side == 3, то на правой.
+// Выводит элементы на чаше.
+// Если side == 2, то на левой,
+// если side == 3, то на правой.
 void print_side(int max_pos, int side)
 {
     for (int j = max_pos; j &amp;gt;= 0; --j)
