@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <title>
-  Контест №1 &ndash; Решения задач с курса School Depth 2016/2017г.
-</title>
+    <title>Решения задач с курса School Depth 2016/2017г.</title>
     
     
-    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/contest/1/">
+      <link href="https://egormatirov.github.io/School_Depth/3/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
+    
+    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/3/">
     
     
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAG+ZJREFU
@@ -209,112 +209,47 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
 
 </header>
     <main>
-  <h1>Контест №1</h1>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/A/">A</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/B/">B</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/C/">C</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/D/">D</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/1/E/">E</a></h2>
-      
-  <a href="http://new.bacs.cs.istu.ru/Contest/ContestMain?contestId=140 ">Ссылка на контест.</a>
+  <h1>3s</h1>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/A/">A</a></h2>
+      <p>#include &lt;stdio.h&gt;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)void d__(int n){if (n != 1){for (int k = 2; k &lt;= n / 2; ++k){if (n % k == 0){printf(&quot;%d * &quot;, k);d__(n / k);return;}}}printf(&quot;%d&quot;, n);}int main(){int n;scanf(&quot;%d&quot;, &amp;n);printf(&quot;%d = &quot;, n);d__(n);printf(&quot;\n\n&quot;);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/B/">B</a></h2>
+      <p>#include &lt;stdio.h&gt;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)void d__(int n){if (n != 1){for (int k = 2; k &lt;= n / 2; ++k){if (n % k == 0){d__(n / k);printf(&quot; * %d&quot;, k);return;}}}printf(&quot;%d&quot;, n);}int main(){int n;scanf(&quot;%d&quot;, &amp;n);printf(&quot;%d = &quot;, n);d__(n);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/C/">C</a></h2>
+      <p>#include &lt;stdio.h&gt;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)void d__(int n){if (n != 1){for (int k = 2; k &lt;= n / 2; ++k){if (n % k == 0){printf(&quot;%d * &quot;, k);d__(n / k);return;}}}printf(&quot;%d&quot;, n);}int main(){int n;scanf(&quot;%d&quot;, &amp;n);d__(n);printf(&quot; = %d&quot;, n);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/D/">D</a></h2>
+      <p>#include &lt;stdio.h&gt;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)void d__(int n){if (n != 1){for (int k = 2; k &lt;= n / 2; ++k){if (n % k == 0){d__(n / k);printf(&quot; * %d&quot;, k);return;}}}printf(&quot;%d&quot;, n);}int main(){int n;scanf(&quot;%d&quot;, &amp;n);d__(n);printf(&quot; = %d&quot;, n);return 0;} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/E/">E</a></h2>
+      <p>#include &lt;stdio.h&gt;int a[50], n, l, d, z;int r[50];void printprogr(){printf(&quot;%d&quot;, r[0]);for (int i = 1; i&lt;l; ++i){printf(&quot; %d&quot;, r[i]);}printf(&quot;\n&quot;);}void progr(int ni, int nr){if (nr &gt;= l){printprogr();z = 1;return;}for (int i = ni; i&lt;n; ++i){if (r[nr - 1] + d == a[i]){r[nr] = a[i];progr(i + 1, nr + 1);}}}int main(){scanf(&quot;%d %d %d \n&quot;, &amp;n, &amp;l, &amp;d);for (int i = 0; i&lt;n; ++i)scanf(&quot;%d &quot;, &amp;a[i]);for (int i = 0; i&lt;n; ++i){r[0] = a[i];progr(i + 1, 1);}if (z == 0) printf(&quot;no&quot;);} </p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/3/F/">F</a></h2>
+      <p>#include &lt;stdio.h&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;string&gt;using namespace std;// Иначе студия ругается на scanf \ printf#pragma warning(disable:4996)int a[28], b[28], ra[28], rb[28], used[28], n, l, d;// для хранения ответов.// По сути, это &quot;массив&quot; с изменяемой длиной.vector&lt;string&gt; answers;void add_answer(){string answer = &quot;&quot;;for (int i = 0; i&lt;l; ++i){// добавляем строчку вида &quot;n m\n&quot;,// где n и m - числа на сторонах доминошки.</p>
+    </article>
   
 </main>
     <footer>
-  <hr>
-  
-
-
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-
+  <nav>
+  <p>
+    
+    <span>Page 1 of 1</span>
+    
+  </p>
+</nav>
 
   
   <p class="powered-by">
