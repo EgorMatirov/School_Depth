@@ -124,6 +124,50 @@ int main()
     </item>
     
     <item>
+      <title>A</title>
+      <link>https://egormatirov.github.io/School_Depth/4/A/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/A/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int Frm()
+{
+    char ch, zn;
+    int a, b, r;
+    ch = getchar();
+
+    if (ch &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; ch &amp;lt;= &#39;9&#39;)
+        return ch - 48;
+
+    a = Frm();
+    zn = getchar();
+    b = Frm();
+    switch (zn)
+    {
+    case &#39;+&#39;:
+        r = a + b;
+        break;
+    case &#39;-&#39;:
+        r = a - b;
+        break;
+    case &#39;*&#39;:
+        r = a * b;
+        break;
+    }
+    ch = getchar();
+    return r;
+}
+
+int main()
+{
+    printf(&amp;quot;%d\n&amp;quot;, Frm());
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>B</title>
       <link>https://egormatirov.github.io/School_Depth/1/B/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -236,6 +280,50 @@ int main()
     d__(n);
     return 0;
 }&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/4/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+using namespace std;
+int Frm()
+{
+    char ch;
+    int a, b, r;
+    ch = getchar();
+
+    if (ch &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; ch &amp;lt;= &#39;9&#39;)
+        return ch - 48;
+
+    getchar();
+    a = Frm();
+    getchar();
+    b = Frm();
+    switch (ch)
+    {
+    case &#39;M&#39;:
+        r = max(a, b);
+        break;
+    case &#39;m&#39;:
+        r = min(a,b);
+        break;
+    }
+    ch = getchar();
+    return r;
+}
+
+int main()
+{
+    printf(&amp;quot;%d\n&amp;quot;, Frm());
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -369,6 +457,79 @@ int main()
     </item>
     
     <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/4/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+int pos;
+
+char buff[1001];
+
+bool Frm()
+{
+    char ch = buff[pos];
+    int a, b, r;
+
+    if (ch == &#39;t&#39;)
+    {
+        pos += 4;
+        return true;
+    }
+    if (ch == &#39;f&#39;)
+    {
+        pos += 5;
+        return false;
+    }
+
+    ++pos; // Пропустили скобку.
+
+    if (buff[pos] == &#39;!&#39;)
+    {
+        ++pos;
+        r = !Frm();
+        ++pos;
+        return r;
+    }
+
+    a = Frm();
+    char zn = buff[pos];
+    ++pos;
+    b = Frm();
+    switch (zn)
+    {
+    case &#39;&amp;amp;&#39;:
+        r = a &amp;amp;&amp;amp; b;
+        break;
+    case &#39;V&#39;:
+        r = a || b;
+        break;
+    }
+
+    ++pos; // Пропустили закрывающую скобку.
+
+    return r;
+}
+
+int main()
+{
+    while (gets(buff) != nullptr)
+    {
+        pos = 0;
+        printf(Frm() ? &amp;quot;true\n&amp;quot; : &amp;quot;false\n&amp;quot;);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>D</title>
       <link>https://egormatirov.github.io/School_Depth/1/D/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -485,155 +646,6 @@ int main()
     d__(n);
     printf(&amp;quot; = %d&amp;quot;, n);
     return 0;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>E</title>
-      <link>https://egormatirov.github.io/School_Depth/1/E/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/1/E/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;stdio.h&amp;gt;
-using namespace std;
-
-// Иначе студия ругается на scanf \ printf
-#pragma warning(disable:4996)
-
-int main()
-{
-    int w, n;
-    int W_i[10];
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;w);
-    for (int i = 0; i &amp;lt; n; ++i)
-        scanf(&amp;quot;%d&amp;quot;, &amp;amp;W_i[i]);
-    int max_number = 1 &amp;lt;&amp;lt; n;
-    for (int k = 0; k&amp;lt;max_number; ++k)
-    {
-        for (int i = 0; i&amp;lt;max_number; ++i)
-        {
-            int balance = w;
-            for (int j = n; j &amp;gt; 0; --j)
-            {
-                int p = 1 &amp;lt;&amp;lt; (j-1);
-                if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) != 0)
-                    balance -= W_i[n - j];
-                if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) == 0)
-                    balance += W_i[n - j];
-            }
-            if (balance == 0)
-            {
-                printf(&amp;quot;YES\n&amp;quot;);
-                for (int j = n; j &amp;gt; 0; --j)
-                {
-                    int p = 1 &amp;lt;&amp;lt; (j - 1);
-                    if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) == 0)
-                        printf(&amp;quot;%d &amp;quot;, W_i[n - j]);
-                }
-                printf(&amp;quot;\n&amp;quot;);
-                for (int j = n; j &amp;gt; 0; --j)
-                {
-                    int p = 1 &amp;lt;&amp;lt; (j - 1);
-                    if ((k&amp;amp;p) != 0 &amp;amp;&amp;amp; (i&amp;amp;p) != 0)
-                        printf(&amp;quot;%d &amp;quot;, W_i[n - j]);
-                }
-                printf(&amp;quot;\n&amp;quot;);
-                return;
-            }
-        }
-    }
-    printf(&amp;quot;NO\n&amp;quot;);
-    return 0;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>E</title>
-      <link>https://egormatirov.github.io/School_Depth/2/E/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/2/E/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;stdio.h&amp;gt;
-using namespace std;
-
-// Иначе студия ругается на scanf \ printf
-#pragma warning(disable:4996)
-
-void R()
-{
-    int a;
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;a);
-    if (a &amp;lt; 0)
-        printf(&amp;quot;%d &amp;quot;, a);
-    if (a != 0)
-        R();
-    if (a &amp;gt; 0)
-        printf(&amp;quot;%d &amp;quot;, a);
-}
-
-int main()
-{
-    R();
-    return 0;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>E</title>
-      <link>https://egormatirov.github.io/School_Depth/3/E/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/3/E/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int a[50], n, l, d, z;
-int r[50];
-
-void printprogr()
-{
-    printf(&amp;quot;%d&amp;quot;, r[0]);
-    for (int i = 1; i&amp;lt;l; ++i)
-    {
-        printf(&amp;quot; %d&amp;quot;, r[i]);
-    }
-    printf(&amp;quot;\n&amp;quot;);
-}
-
-void progr(int ni, int nr)
-{
-    if (nr &amp;gt;= l)
-    {
-        printprogr();
-        z = 1;
-        return;
-    }
-    for (int i = ni; i&amp;lt;n; ++i)
-    {
-        if (r[nr - 1] + d == a[i])
-        {
-            r[nr] = a[i];
-            progr(i + 1, nr + 1);
-        }
-    }
-}
-
-int main()
-{
-    scanf(&amp;quot;%d %d %d \n&amp;quot;, &amp;amp;n, &amp;amp;l, &amp;amp;d);
-    for (int i = 0; i&amp;lt;n; ++i)
-        scanf(&amp;quot;%d &amp;quot;, &amp;amp;a[i]);
-    for (int i = 0; i&amp;lt;n; ++i)
-    {
-        r[0] = a[i];
-        progr(i + 1, 1);
-    }
-    if (z == 0) printf(&amp;quot;no&amp;quot;);
 }&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

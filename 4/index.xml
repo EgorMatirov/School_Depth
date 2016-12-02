@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4-rsses on Решения задач с курса School Depth 2016/2017г.</title>
+    <link>https://egormatirov.github.io/School_Depth/4/index.xml</link>
+    <description>Recent content in 4-rsses on Решения задач с курса School Depth 2016/2017г.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
+    <atom:link href="https://egormatirov.github.io/School_Depth/4/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A</title>
+      <link>https://egormatirov.github.io/School_Depth/4/A/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/A/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int Frm()
+{
+    char ch, zn;
+    int a, b, r;
+    ch = getchar();
+
+    if (ch &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; ch &amp;lt;= &#39;9&#39;)
+        return ch - 48;
+
+    a = Frm();
+    zn = getchar();
+    b = Frm();
+    switch (zn)
+    {
+    case &#39;+&#39;:
+        r = a + b;
+        break;
+    case &#39;-&#39;:
+        r = a - b;
+        break;
+    case &#39;*&#39;:
+        r = a * b;
+        break;
+    }
+    ch = getchar();
+    return r;
+}
+
+int main()
+{
+    printf(&amp;quot;%d\n&amp;quot;, Frm());
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/4/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+using namespace std;
+int Frm()
+{
+    char ch;
+    int a, b, r;
+    ch = getchar();
+
+    if (ch &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; ch &amp;lt;= &#39;9&#39;)
+        return ch - 48;
+
+    getchar();
+    a = Frm();
+    getchar();
+    b = Frm();
+    switch (ch)
+    {
+    case &#39;M&#39;:
+        r = max(a, b);
+        break;
+    case &#39;m&#39;:
+        r = min(a,b);
+        break;
+    }
+    ch = getchar();
+    return r;
+}
+
+int main()
+{
+    printf(&amp;quot;%d\n&amp;quot;, Frm());
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/4/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+int pos;
+
+char buff[1001];
+
+bool Frm()
+{
+    char ch = buff[pos];
+    int a, b, r;
+
+    if (ch == &#39;t&#39;)
+    {
+        pos += 4;
+        return true;
+    }
+    if (ch == &#39;f&#39;)
+    {
+        pos += 5;
+        return false;
+    }
+
+    ++pos; // Пропустили скобку.
+
+    if (buff[pos] == &#39;!&#39;)
+    {
+        ++pos;
+        r = !Frm();
+        ++pos;
+        return r;
+    }
+
+    a = Frm();
+    char zn = buff[pos];
+    ++pos;
+    b = Frm();
+    switch (zn)
+    {
+    case &#39;&amp;amp;&#39;:
+        r = a &amp;amp;&amp;amp; b;
+        break;
+    case &#39;V&#39;:
+        r = a || b;
+        break;
+    }
+
+    ++pos; // Пропустили закрывающую скобку.
+
+    return r;
+}
+
+int main()
+{
+    while (gets(buff) != nullptr)
+    {
+        pos = 0;
+        printf(Frm() ? &amp;quot;true\n&amp;quot; : &amp;quot;false\n&amp;quot;);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D</title>
+      <link>https://egormatirov.github.io/School_Depth/4/D/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/D/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+#pragma warning(disable:4996)
+
+using namespace std;
+
+bool check()
+{
+    int ch = getchar();
+    if (ch &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; ch &amp;lt;= &#39;9&#39;)
+        return true;
+    if (ch == &#39;(&#39;)
+    {
+        bool a = check();
+        ch = getchar();
+        bool b = check();
+        bool c = ch == &#39;+&#39; || ch == &#39;-&#39; || ch == &#39;*&#39;;
+        if (!a || !b || !c)
+            return false;
+        getchar();
+        return true;
+    }
+    return false;
+}
+
+int main()
+{
+    bool r = check();
+    string str;
+    getline(cin, str);
+    if (str != &amp;quot;.&amp;quot; || !r)
+        cout &amp;lt;&amp;lt; &amp;quot;No&amp;quot; &amp;lt;&amp;lt; endl;
+    else
+        cout &amp;lt;&amp;lt; &amp;quot;Yes&amp;quot; &amp;lt;&amp;lt; endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>E</title>
+      <link>https://egormatirov.github.io/School_Depth/4/E/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/4/E/</guid>
+      <description>&lt;p&gt;Алгоритм перевода из инфикса в постфикс:
+&lt;a href=&#34;https://drive.google.com/open?id=0B9rbxeSreyMAa3ZSZlNzSGlPeG8&#34;&gt;https://drive.google.com/open?id=0B9rbxeSreyMAa3ZSZlNzSGlPeG8&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

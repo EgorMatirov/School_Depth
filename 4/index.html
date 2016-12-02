@@ -11,9 +11,9 @@
     <title>Решения задач с курса School Depth 2016/2017г.</title>
     
     
-      <link href="https://egormatirov.github.io/School_Depth/contest/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
+      <link href="https://egormatirov.github.io/School_Depth/4/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
     
-    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/contest/">
+    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/4/">
     
     
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAG+ZJREFU
@@ -209,26 +209,31 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
 
 </header>
     <main>
-  <h1>Contests</h1>
+  <h1>4s</h1>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/1/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/4/A/">A</a></h2>
+      <p>#include &lt;stdio.h&gt;int Frm(){char ch, zn;int a, b, r;ch = getchar();if (ch &gt;= '0' &amp;&amp; ch &lt;= '9')return ch - 48;a = Frm();zn = getchar();b = Frm();switch (zn){case '+':r = a + b;break;case '-':r = a - b;break;case '*':r = a * b;break;}ch = getchar();return r;}int main(){printf(&quot;%d\n&quot;, Frm());return 0;} </p>
     </article>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/2/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/4/B/">B</a></h2>
+      <p>#include &lt;stdio.h&gt;#include &lt;algorithm&gt;using namespace std;int Frm(){char ch;int a, b, r;ch = getchar();if (ch &gt;= '0' &amp;&amp; ch &lt;= '9')return ch - 48;getchar();a = Frm();getchar();b = Frm();switch (ch){case 'M':r = max(a, b);break;case 'm':r = min(a,b);break;}ch = getchar();return r;}int main(){printf(&quot;%d\n&quot;, Frm());return 0;} </p>
     </article>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/3/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/4/C/">C</a></h2>
+      <p>#include &lt;stdio.h&gt;#include &lt;algorithm&gt;#pragma warning(disable:4996)using namespace std;int pos;char buff[1001];bool Frm(){char ch = buff[pos];int a, b, r;if (ch == 't'){pos += 4;return true;}if (ch == 'f'){pos += 5;return false;}++pos; // Пропустили скобку.if (buff[pos] == '!'){++pos;r = !Frm();++pos;return r;}a = Frm();char zn = buff[pos];++pos;b = Frm();switch (zn){case '&amp;':r = a &amp;&amp; b;break;case 'V':r = a || b;break;}++pos; // Пропустили закрывающую скобку.</p>
     </article>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/4/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/4/D/">D</a></h2>
+      <p>#include &lt;stdio.h&gt;#include &lt;algorithm&gt;#include &lt;string&gt;#include &lt;iostream&gt;#pragma warning(disable:4996)using namespace std;bool check(){int ch = getchar();if (ch &gt;= '0' &amp;&amp; ch &lt;= '9')return true;if (ch == '('){bool a = check();ch = getchar();bool b = check();bool c = ch == '+' || ch == '-' || ch == '*';if (!a || !b || !c)return false;getchar();return true;}return false;}int main(){bool r = check();string str;getline(cin, str);if (str !</p>
+    </article>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/4/E/">E</a></h2>
+      <p>Алгоритм перевода из инфикса в постфикс: https://drive.google.com/open?id=0B9rbxeSreyMAa3ZSZlNzSGlPeG8</p>
     </article>
   
 </main>
