@@ -11,9 +11,9 @@
     <title>Решения задач с курса School Depth 2016/2017г.</title>
     
     
-      <link href="https://egormatirov.github.io/School_Depth/contest/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
+      <link href="https://egormatirov.github.io/School_Depth/5/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
     
-    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/contest/">
+    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/5/">
     
     
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAG+ZJREFU
@@ -209,31 +209,16 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
 
 </header>
     <main>
-  <h1>Contests</h1>
+  <h1>5s</h1>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/1/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/5/B/">B</a></h2>
+      <p>#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;bool isSlump(string::iterator begin, string::iterator end){if (*begin != 'D' &amp;&amp; *begin != 'E') return false;int skips = 0;do{++begin;++skips;} while (begin != end &amp;&amp; *begin == 'F');if (begin == end || skips == 1) return false;if (*begin == 'G') return (begin+1) == end;return isSlump(begin, end);}string answers[] = { &quot;NO&quot;, &quot;YES&quot; };int main(){int n;cin &gt;&gt; n;cout &lt;&lt; &quot;SLUMPS OUTPUT&quot; &lt;&lt; endl;for (int i = 0; i &lt; n; ++i){string s;cin &gt;&gt; s;cout &lt;&lt; answers[isSlump(s.</p>
     </article>
   
     <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/2/"></a></h2>
-      <p></p>
-    </article>
-  
-    <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/3/"></a></h2>
-      <p></p>
-    </article>
-  
-    <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/4/"></a></h2>
-      <p></p>
-    </article>
-  
-    <article>
-      <h2><a href="https://egormatirov.github.io/School_Depth/contest/5/"></a></h2>
-      <p></p>
+      <h2><a href="https://egormatirov.github.io/School_Depth/5/C/">C</a></h2>
+      <p>#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;bool ok = true;string::iterator SkipSlump(string::iterator begin, string::iterator end){if (*begin != 'D' &amp;&amp; *begin != 'E'){ok = false;return end; // Не Slump}int skips = 0;do{++begin;++skips;} while (begin != end &amp;&amp; *begin == 'F');if (begin == end || skips == 1){ok = false;return end; // Не Slump}if (*begin == 'G') return begin + 1; // Slump, оканчивающийся на Greturn SkipSlump(begin, end); // Slump, оканчивающийся на Slump.</p>
     </article>
   
 </main>

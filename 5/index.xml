@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5-rsses on Решения задач с курса School Depth 2016/2017г.</title>
+    <link>https://egormatirov.github.io/School_Depth/5/index.xml</link>
+    <description>Recent content in 5-rsses on Решения задач с курса School Depth 2016/2017г.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
+    <atom:link href="https://egormatirov.github.io/School_Depth/5/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/5/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/5/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+bool isSlump(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;D&#39; &amp;amp;&amp;amp; *begin != &#39;E&#39;) return false;
+    int skips = 0;
+    do
+    {
+        ++begin;
+        ++skips;
+    } while (begin != end &amp;amp;&amp;amp; *begin == &#39;F&#39;);
+    if (begin == end || skips == 1) return false;
+    if (*begin == &#39;G&#39;) return (begin+1) == end;
+    return isSlump(begin, end);
+}
+
+string answers[] = { &amp;quot;NO&amp;quot;, &amp;quot;YES&amp;quot; };
+
+int main()
+{
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    cout &amp;lt;&amp;lt; &amp;quot;SLUMPS OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+    for (int i = 0; i &amp;lt; n; ++i)
+    {
+        string s;
+        cin &amp;gt;&amp;gt; s;
+        cout &amp;lt;&amp;lt; answers[isSlump(s.begin(), s.end())] &amp;lt;&amp;lt; endl;
+    }
+    cout &amp;lt;&amp;lt; &amp;quot;END OF OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/5/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/5/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+bool ok = true;
+
+string::iterator SkipSlump(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;D&#39; &amp;amp;&amp;amp; *begin != &#39;E&#39;)
+    {
+        ok = false;
+        return end; // Не Slump
+    }
+    int skips = 0;
+    do
+    {
+        ++begin;
+        ++skips;
+    } while (begin != end &amp;amp;&amp;amp; *begin == &#39;F&#39;);
+    if (begin == end || skips == 1)
+    {
+        ok = false;
+        return end; // Не Slump
+    }
+    if (*begin == &#39;G&#39;) return begin + 1; // Slump, оканчивающийся на G
+    return SkipSlump(begin, end); // Slump, оканчивающийся на Slump.
+}
+
+string::iterator SkipSlimp(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;A&#39;)
+    {
+        ok = false;
+        return end; // Не Slimp
+    }
+    ++begin;
+    if (*begin == &#39;H&#39;) return begin + 1;
+    if (*begin == &#39;B&#39;)
+    {
+        begin = SkipSlimp(begin + 1, end);
+        if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
+        ok = false;
+        return end;
+    }
+    begin = SkipSlump(begin, end);
+    if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
+    ok = false;
+    return end;
+}
+
+string answers[] = { &amp;quot;NO&amp;quot;, &amp;quot;YES&amp;quot; };
+
+int main()
+{
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    cout &amp;lt;&amp;lt; &amp;quot;SLURPYS OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+    for (int i = 0; i &amp;lt; n; ++i)
+    {
+        string s;
+        cin &amp;gt;&amp;gt; s;
+        ok = true;
+        string::iterator it = SkipSlimp(s.begin(), s.end());
+        if(ok) it = SkipSlump(it, s.end());
+        ok = ok &amp;amp;&amp;amp; it == s.end();
+        cout &amp;lt;&amp;lt; answers[ok] &amp;lt;&amp;lt; endl;
+    }
+    cout &amp;lt;&amp;lt; &amp;quot;END OF OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

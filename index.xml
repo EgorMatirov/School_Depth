@@ -328,6 +328,49 @@ int main()
     </item>
     
     <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/5/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/5/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+bool isSlump(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;D&#39; &amp;amp;&amp;amp; *begin != &#39;E&#39;) return false;
+    int skips = 0;
+    do
+    {
+        ++begin;
+        ++skips;
+    } while (begin != end &amp;amp;&amp;amp; *begin == &#39;F&#39;);
+    if (begin == end || skips == 1) return false;
+    if (*begin == &#39;G&#39;) return (begin+1) == end;
+    return isSlump(begin, end);
+}
+
+string answers[] = { &amp;quot;NO&amp;quot;, &amp;quot;YES&amp;quot; };
+
+int main()
+{
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    cout &amp;lt;&amp;lt; &amp;quot;SLUMPS OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+    for (int i = 0; i &amp;lt; n; ++i)
+    {
+        string s;
+        cin &amp;gt;&amp;gt; s;
+        cout &amp;lt;&amp;lt; answers[isSlump(s.begin(), s.end())] &amp;lt;&amp;lt; endl;
+    }
+    cout &amp;lt;&amp;lt; &amp;quot;END OF OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>C</title>
       <link>https://egormatirov.github.io/School_Depth/1/C/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -530,6 +573,85 @@ int main()
     </item>
     
     <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/5/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/5/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+
+using namespace std;
+
+bool ok = true;
+
+string::iterator SkipSlump(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;D&#39; &amp;amp;&amp;amp; *begin != &#39;E&#39;)
+    {
+        ok = false;
+        return end; // Не Slump
+    }
+    int skips = 0;
+    do
+    {
+        ++begin;
+        ++skips;
+    } while (begin != end &amp;amp;&amp;amp; *begin == &#39;F&#39;);
+    if (begin == end || skips == 1)
+    {
+        ok = false;
+        return end; // Не Slump
+    }
+    if (*begin == &#39;G&#39;) return begin + 1; // Slump, оканчивающийся на G
+    return SkipSlump(begin, end); // Slump, оканчивающийся на Slump.
+}
+
+string::iterator SkipSlimp(string::iterator begin, string::iterator end)
+{
+    if (*begin != &#39;A&#39;)
+    {
+        ok = false;
+        return end; // Не Slimp
+    }
+    ++begin;
+    if (*begin == &#39;H&#39;) return begin + 1;
+    if (*begin == &#39;B&#39;)
+    {
+        begin = SkipSlimp(begin + 1, end);
+        if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
+        ok = false;
+        return end;
+    }
+    begin = SkipSlump(begin, end);
+    if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
+    ok = false;
+    return end;
+}
+
+string answers[] = { &amp;quot;NO&amp;quot;, &amp;quot;YES&amp;quot; };
+
+int main()
+{
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    cout &amp;lt;&amp;lt; &amp;quot;SLURPYS OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+    for (int i = 0; i &amp;lt; n; ++i)
+    {
+        string s;
+        cin &amp;gt;&amp;gt; s;
+        ok = true;
+        string::iterator it = SkipSlimp(s.begin(), s.end());
+        if(ok) it = SkipSlump(it, s.end());
+        ok = ok &amp;amp;&amp;amp; it == s.end();
+        cout &amp;lt;&amp;lt; answers[ok] &amp;lt;&amp;lt; endl;
+    }
+    cout &amp;lt;&amp;lt; &amp;quot;END OF OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>D</title>
       <link>https://egormatirov.github.io/School_Depth/1/D/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -572,79 +694,6 @@ int main()
         prev = current;
     }
     printf(&amp;quot;YES\n&amp;quot;);
-    return 0;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>D</title>
-      <link>https://egormatirov.github.io/School_Depth/2/D/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/2/D/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;stdio.h&amp;gt;
-using namespace std;
-
-// Иначе студия ругается на scanf \ printf
-#pragma warning(disable:4996)
-
-int s(int n, int sum)
-{
-    int t = 1;
-    if (n == 1) printf(&amp;quot;%d = 1&amp;quot;, sum + n);
-    else
-    {
-        t = n + s(n - 1, sum + n);
-        printf(&amp;quot; + &amp;quot;);
-        printf(&amp;quot;%d&amp;quot;, n);
-    }
-    return t;
-}
-
-int main()
-{
-    int n;
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
-    s(n, 0);
-    return 0;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>D</title>
-      <link>https://egormatirov.github.io/School_Depth/3/D/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/3/D/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-// Иначе студия ругается на scanf \ printf
-#pragma warning(disable:4996)
-void d__(int n)
-{
-    if (n != 1)
-    {
-        for (int k = 2; k &amp;lt;= n / 2; ++k)
-        {
-            if (n % k == 0)
-            {
-                d__(n / k);
-                printf(&amp;quot; * %d&amp;quot;, k);
-                return;
-            }
-        }
-    }
-    printf(&amp;quot;%d&amp;quot;, n);
-}
-
-int main()
-{
-    int n;
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
-    d__(n);
-    printf(&amp;quot; = %d&amp;quot;, n);
     return 0;
 }&lt;/code&gt;&lt;/pre&gt;
 </description>
