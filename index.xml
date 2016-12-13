@@ -168,6 +168,45 @@ int main()
     </item>
     
     <item>
+      <title>A</title>
+      <link>https://egormatirov.github.io/School_Depth/6/A/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/A/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+const int MAX_N = 9;
+const int a[MAX_N] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int res[MAX_N];
+int m = 5;
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == m)
+    {
+        for (int i = 0; i&amp;lt;m; i++)
+            printf(i == m - 1 ? &amp;quot;%d\n&amp;quot; : &amp;quot;%d &amp;quot;, res[i]);
+        return;
+    }
+    for (int i = f; i&amp;lt;n; i++)
+    {
+        res[tg] = a[i];
+        comb(tg + 1, i + 1);
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d %d&amp;quot;, &amp;amp;n, &amp;amp;m);
+
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>B</title>
       <link>https://egormatirov.github.io/School_Depth/1/B/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -371,6 +410,49 @@ int main()
     </item>
     
     <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/6/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+const int MAX_N = 9;
+const int a[MAX_N] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int res[MAX_N];
+char used[MAX_N];
+int m = 5;
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == m)
+    {
+        for (int i = 0; i&amp;lt;m; i++)
+            printf(i == m - 1 ? &amp;quot;%d\n&amp;quot; : &amp;quot;%d&amp;quot;, res[i]);
+        return;
+    }
+    for (int i = 0; i&amp;lt;n; i++)
+    {
+        if (used[i]) continue;
+        res[tg] = a[i];
+        used[i] = true;
+        comb(tg + 1, i + 1);
+        used[i] = false;
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    m = n;
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>C</title>
       <link>https://egormatirov.github.io/School_Depth/1/C/</link>
       <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
@@ -569,133 +651,6 @@ int main()
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>C</title>
-      <link>https://egormatirov.github.io/School_Depth/5/C/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/5/C/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-
-using namespace std;
-
-bool ok = true;
-
-string::iterator SkipSlump(string::iterator begin, string::iterator end)
-{
-    if (*begin != &#39;D&#39; &amp;amp;&amp;amp; *begin != &#39;E&#39;)
-    {
-        ok = false;
-        return end; // Не Slump
-    }
-    int skips = 0;
-    do
-    {
-        ++begin;
-        ++skips;
-    } while (begin != end &amp;amp;&amp;amp; *begin == &#39;F&#39;);
-    if (begin == end || skips == 1)
-    {
-        ok = false;
-        return end; // Не Slump
-    }
-    if (*begin == &#39;G&#39;) return begin + 1; // Slump, оканчивающийся на G
-    return SkipSlump(begin, end); // Slump, оканчивающийся на Slump.
-}
-
-string::iterator SkipSlimp(string::iterator begin, string::iterator end)
-{
-    if (*begin != &#39;A&#39;)
-    {
-        ok = false;
-        return end; // Не Slimp
-    }
-    ++begin;
-    if (*begin == &#39;H&#39;) return begin + 1;
-    if (*begin == &#39;B&#39;)
-    {
-        begin = SkipSlimp(begin + 1, end);
-        if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
-        ok = false;
-        return end;
-    }
-    begin = SkipSlump(begin, end);
-    if (begin != end &amp;amp;&amp;amp; *begin == &#39;C&#39;) return begin + 1;
-    ok = false;
-    return end;
-}
-
-string answers[] = { &amp;quot;NO&amp;quot;, &amp;quot;YES&amp;quot; };
-
-int main()
-{
-    int n;
-    cin &amp;gt;&amp;gt; n;
-    cout &amp;lt;&amp;lt; &amp;quot;SLURPYS OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
-    for (int i = 0; i &amp;lt; n; ++i)
-    {
-        string s;
-        cin &amp;gt;&amp;gt; s;
-        ok = true;
-        string::iterator it = SkipSlimp(s.begin(), s.end());
-        if(ok) it = SkipSlump(it, s.end());
-        ok = ok &amp;amp;&amp;amp; it == s.end();
-        cout &amp;lt;&amp;lt; answers[ok] &amp;lt;&amp;lt; endl;
-    }
-    cout &amp;lt;&amp;lt; &amp;quot;END OF OUTPUT&amp;quot; &amp;lt;&amp;lt; endl;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>D</title>
-      <link>https://egormatirov.github.io/School_Depth/1/D/</link>
-      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
-      
-      <guid>https://egormatirov.github.io/School_Depth/1/D/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;stdio.h&amp;gt;
-using namespace std;
-
-// Иначе студия ругается на scanf \ printf
-#pragma warning(disable:4996)
-
-int main()
-{
-    int n, prev;
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
-    scanf(&amp;quot;%d&amp;quot;, &amp;amp;prev);
-    for (int i = 1; i&amp;lt;n; ++i)
-    {
-        int diff = 0;
-        int current;
-        scanf(&amp;quot;%d&amp;quot;, &amp;amp;current);
-        int maska = 1;
-        while(maska &amp;lt; max(prev, current))
-        {
-            maska&amp;lt;&amp;lt;=1;
-        }
-        for(; maska &amp;gt; 0; maska &amp;gt;&amp;gt;=1)
-        {
-            if((prev&amp;amp;maska) != (current&amp;amp;maska))
-            {
-                ++diff;
-            }
-        }
-        if (diff != 1)
-        {
-            printf(&amp;quot;NO\n%d\n&amp;quot;, i);
-            return;
-        }
-        prev = current;
-    }
-    printf(&amp;quot;YES\n&amp;quot;);
-    return 0;
-}&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

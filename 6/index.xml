@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6-rsses on Решения задач с курса School Depth 2016/2017г.</title>
+    <link>https://egormatirov.github.io/School_Depth/6/index.xml</link>
+    <description>Recent content in 6-rsses on Решения задач с курса School Depth 2016/2017г.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
+    <atom:link href="https://egormatirov.github.io/School_Depth/6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A</title>
+      <link>https://egormatirov.github.io/School_Depth/6/A/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/A/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+const int MAX_N = 9;
+const int a[MAX_N] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int res[MAX_N];
+int m = 5;
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == m)
+    {
+        for (int i = 0; i&amp;lt;m; i++)
+            printf(i == m - 1 ? &amp;quot;%d\n&amp;quot; : &amp;quot;%d &amp;quot;, res[i]);
+        return;
+    }
+    for (int i = f; i&amp;lt;n; i++)
+    {
+        res[tg] = a[i];
+        comb(tg + 1, i + 1);
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d %d&amp;quot;, &amp;amp;n, &amp;amp;m);
+
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>B</title>
+      <link>https://egormatirov.github.io/School_Depth/6/B/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/B/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+const int MAX_N = 9;
+const int a[MAX_N] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+int res[MAX_N];
+char used[MAX_N];
+int m = 5;
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == m)
+    {
+        for (int i = 0; i&amp;lt;m; i++)
+            printf(i == m - 1 ? &amp;quot;%d\n&amp;quot; : &amp;quot;%d&amp;quot;, res[i]);
+        return;
+    }
+    for (int i = 0; i&amp;lt;n; i++)
+    {
+        if (used[i]) continue;
+        res[tg] = a[i];
+        used[i] = true;
+        comb(tg + 1, i + 1);
+        used[i] = false;
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    m = n;
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://egormatirov.github.io/School_Depth/6/C/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/C/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+const int MAX_N = 9;
+int res[MAX_N];
+char used[MAX_N];
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == n)
+    {
+        for (int i = 0; i &amp;lt; n; i++)
+        {
+            for (int j = 0; j &amp;lt; n; ++j)
+            {
+                printf(res[i] == j ? &amp;quot;X&amp;quot; : &amp;quot;.&amp;quot;);
+            }
+            printf(&amp;quot;\n&amp;quot;);
+        }
+        printf(&amp;quot;\n&amp;quot;);
+        return;
+    }
+    for (int i = 0; i&amp;lt;n; i++)
+    {
+        if (used[i]) continue;
+        res[tg] = i;
+        used[i] = true;
+        comb(tg + 1, i + 1);
+        used[i] = false;
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D</title>
+      <link>https://egormatirov.github.io/School_Depth/6/D/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/6/D/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+const int MAX_N = 9;
+int res[MAX_N];
+char used[MAX_N];
+int n;
+
+void comb(int tg, int f)
+{
+    if (tg == n)
+    {
+        for (int i = 0; i &amp;lt; n; i++)
+        {
+            for (int j = 0; j &amp;lt; n; ++j)
+            {
+                if (i != j &amp;amp;&amp;amp; abs(i - j) == abs(res[i] - res[j]))
+                    return;
+            }
+        }
+        for (int i = 0; i &amp;lt; n; i++)
+        {
+            for (int j = 0; j &amp;lt; n; ++j)
+            {
+                printf(res[i] == j ? &amp;quot;X&amp;quot; : &amp;quot;.&amp;quot;);
+            }
+            printf(&amp;quot;\n&amp;quot;);
+        }
+        printf(&amp;quot;\n&amp;quot;);
+        return;
+    }
+    for (int i = 0; i&amp;lt;n; i++)
+    {
+        if (used[i]) continue;
+        res[tg] = i;
+        used[i] = true;
+        comb(tg + 1, i + 1);
+        used[i] = false;
+    }
+}
+
+int main()
+{
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+    comb(0, 0);
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
