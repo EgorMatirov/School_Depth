@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8-rsses on Решения задач с курса School Depth 2016/2017г.</title>
+    <link>https://egormatirov.github.io/School_Depth/8/index.xml</link>
+    <description>Recent content in 8-rsses on Решения задач с курса School Depth 2016/2017г.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2016 19:40:27 +0400</lastBuildDate>
+    <atom:link href="https://egormatirov.github.io/School_Depth/8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>С</title>
+      <link>https://egormatirov.github.io/School_Depth/8/%D0%A1/</link>
+      <pubDate>Mon, 07 Nov 2016 19:40:27 +0400</pubDate>
+      
+      <guid>https://egormatirov.github.io/School_Depth/8/%D0%A1/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;#define _CRT_SECURE_NO_WARNINGS
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+#define MaxN 100000
+
+int arr[MaxN];
+int numsByDigitOrder[10][MaxN + 1];
+int n;
+
+int getDigit(int num, int pos)
+{
+    int powOf10 = pow(10, pos);
+    return (num / powOf10) % 10;
+}
+
+void sort(int pos)
+{
+    for (int i = 0; i&amp;lt;10; ++i)
+        numsByDigitOrder[i][0] = 0;
+
+    for (int i = 0; i&amp;lt;n; ++i)
+    {
+        int digit = getDigit(arr[i], pos);
+        int insert_pos = numsByDigitOrder[digit][0] + 1;
+        numsByDigitOrder[digit][insert_pos] = arr[i];
+        ++numsByDigitOrder[digit][0];
+    }
+
+    for (int i = 0, x = 0; i&amp;lt;10; ++i)
+        for (int j = 1; j &amp;lt;= numsByDigitOrder[i][0]; ++j, ++x)
+            arr[x] = numsByDigitOrder[i][j];
+}
+
+void print()
+{
+    for (int j = 0; j&amp;lt;n; ++j)
+        printf(j == n - 1 ? &amp;quot;%d\n&amp;quot; : &amp;quot;%d &amp;quot;, arr[j]);
+}
+
+int main()
+{
+    scanf(&amp;quot;%d&amp;quot;, &amp;amp;n);
+
+    int max_r = 0;
+
+    for (int i = 0; i&amp;lt;n; ++i)
+    {
+        scanf(&amp;quot;%d&amp;quot;, &amp;amp;arr[i]);
+
+        // ������� ���������� ������.
+        max_r = std::max(max_r, int(log10(arr[i])));
+    }
+
+    print();
+
+    for (int i = 0; i &amp;lt;= max_r; ++i)
+    {
+        sort(i);
+        print();
+    }
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

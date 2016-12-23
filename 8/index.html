@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <title>
-  Контест №5 &ndash; Решения задач с курса School Depth 2016/2017г.
-</title>
+    <title>Решения задач с курса School Depth 2016/2017г.</title>
     
     
-    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/contest/5/">
+      <link href="https://egormatirov.github.io/School_Depth/8/index.xml" rel="alternate" type="application/rss+xml" title="Решения задач с курса School Depth 2016/2017г." />
+    
+    <link rel="canonical" href="https://egormatirov.github.io/School_Depth/8/">
     
     
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAG+ZJREFU
@@ -209,170 +209,22 @@ jJasrM9JHpMQoTocKVCL4IPr/fOT+fzoT3p+SelrFs2odf2vmwZACVzT9SAJ8iKO6OCx+/tKkw2M
 
 </header>
     <main>
-  <h1>Контест №5</h1>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/5/B/">B</a></h2>
-      
-        <h2><a href="https://egormatirov.github.io/School_Depth/5/C/">C</a></h2>
-      
-  <a href="http://new.bacs.cs.istu.ru/Contest/ContestMain?contestId=154 ">Ссылка на контест.</a>
+  <h1>8s</h1>
+  
+    <article>
+      <h2><a href="https://egormatirov.github.io/School_Depth/8/%D0%A1/">С</a></h2>
+      <p>#define _CRT_SECURE_NO_WARNINGS#include &lt;stdio.h&gt;#include &lt;math.h&gt;#include &lt;algorithm&gt;#define MaxN 100000int arr[MaxN];int numsByDigitOrder[10][MaxN + 1];int n;int getDigit(int num, int pos){int powOf10 = pow(10, pos);return (num / powOf10) % 10;}void sort(int pos){for (int i = 0; i&lt;10; ++i)numsByDigitOrder[i][0] = 0;for (int i = 0; i&lt;n; ++i){int digit = getDigit(arr[i], pos);int insert_pos = numsByDigitOrder[digit][0] + 1;numsByDigitOrder[digit][insert_pos] = arr[i];++numsByDigitOrder[digit][0];}for (int i = 0, x = 0; i&lt;10; ++i)for (int j = 1; j &lt;= numsByDigitOrder[i][0]; ++j, ++x)arr[x] = numsByDigitOrder[i][j];}void print(){for (int j = 0; j&lt;n; ++j)printf(j == n - 1 ?</p>
+    </article>
   
 </main>
     <footer>
-  <hr>
-  
-
-
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-
-
+  <nav>
+  <p>
+    
+    <span>Page 1 of 1</span>
+    
+  </p>
+</nav>
 
   
   <p class="powered-by">
